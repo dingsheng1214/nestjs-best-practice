@@ -9,6 +9,7 @@
             "request": "launch",
             "runtimeArgs": ["run-script", "start:debug"],
             "autoAttachChildProcesses": true,
+            "internalConsoleOptions": "neverOpen",
             "console": "integratedTerminal",
             "runtimeExecutable": "pnpm",
             "skipFiles": ["<node_internals>/**"],
