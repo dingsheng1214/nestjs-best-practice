@@ -26,10 +26,13 @@
         "@nestjs/core": "^9.2.1",
         "@nestjs/platform-express": "^9.2.1",
         "@nestjs/platform-fastify": "^9.2.1",
+        "@nestjs/typeorm": "^9.0.1",
         "cross-env": "^7.0.3",
+        "mysql2": "^3.0.1",
         "reflect-metadata": "^0.1.13",
         "rimraf": "^3.0.2",
         "rxjs": "^7.8.0",
+        "typeorm": "^0.3.11",
         "yaml": "^2.2.1"
     },
     "devDependencies": {
