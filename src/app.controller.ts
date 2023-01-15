@@ -12,11 +12,12 @@ export class AppController {
 
     @Get()
     getHello(): string {
+        throw new Error('error');
         return this.appService.getHello();
     }
 
     @Get('getDBName')
     getDBName() {
-        return this.configService.get('DB').name;
+        return this.configService.get('db_config');
     }
 }
