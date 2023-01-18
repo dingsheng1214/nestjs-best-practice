@@ -2,8 +2,9 @@ import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 
 import { AppModule } from '@/app.module';
-import { LoggerMiddleware } from '@/common/middleware';
 import Logger from '@/common/utils/Logger';
+
+import { LoggerMiddleware } from './common/middleware';
 
 async function bootstrap() {
     const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter());

@@ -1,1 +1,3 @@
-export * as LoggerMiddleware from './Logger.middleware';
+import LoggerMiddleware from './Logger.middleware';
+
+export { LoggerMiddleware };
