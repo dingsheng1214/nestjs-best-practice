@@ -1,5 +1,4 @@
 db_config:
-  name: "nest-practice"
   type: "mysql"
   host: "localhost"
   port: 3306

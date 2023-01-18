@@ -6,15 +6,17 @@ import { getConfig } from '@/common/utils/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import DatabaseModule from './modules/database/database.module';
+import { UserModule } from './modules/user/user.module';
 
 @Module({
     imports: [
-        DatabaseModule.forRoot(),
         ConfigModule.forRoot({
             isGlobal: true, // 全局模块
             ignoreEnvFile: true, // 忽略.env相关配置文件
             load: [getConfig], // 读取自定义文件
         }),
+        DatabaseModule.forRoot(),
+        UserModule,
     ],
     controllers: [AppController],
     providers: [AppService],
