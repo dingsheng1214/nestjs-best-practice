@@ -5,6 +5,7 @@ import { getConfig } from '@/common/utils/config';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { ArticleModule } from './modules/article/article.module';
 import DatabaseModule from './modules/database/database.module';
 import { UserModule } from './modules/user/user.module';
 
@@ -17,6 +18,7 @@ import { UserModule } from './modules/user/user.module';
         }),
         DatabaseModule.forRoot(),
         UserModule,
+        ArticleModule,
     ],
     controllers: [AppController],
     providers: [AppService],

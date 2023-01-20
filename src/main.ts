@@ -1,3 +1,4 @@
+import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 
@@ -11,6 +12,10 @@ async function bootstrap() {
 
     // 中间件-log4js日志
     app.use(LoggerMiddleware);
+
+    // DTO入参校验
+    app.useGlobalPipes(new ValidationPipe());
+
     await app.listen(3000, '0.0.0.0');
     Logger.msg(`Application is running on: ${await app.getUrl()}`);
     Logger.msg(`Swagger is running on: ${await app.getUrl()}/api`);
