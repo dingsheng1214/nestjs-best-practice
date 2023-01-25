@@ -18,5 +18,5 @@ export class CreateArticleDto {
 
     @IsBoolean()
     @IsOptional()
-    published?: boolean = false;
+    published = false;
 }

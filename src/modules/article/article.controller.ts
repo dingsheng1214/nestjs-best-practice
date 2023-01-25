@@ -1,9 +1,20 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+    Controller,
+    Get,
+    Post,
+    Body,
+    Patch,
+    Param,
+    Delete,
+    UseInterceptors,
+    SerializeOptions,
+} from '@nestjs/common';
 
 import { ArticleService } from './article.service';
 import { CreateArticleDto } from './dto/create-article.dto';
 import { UpdateArticleDto } from './dto/update-article.dto';
 
+@UseInterceptors()
 @Controller('article')
 export class ArticleController {
     constructor(private readonly articleService: ArticleService) {}
@@ -19,8 +30,9 @@ export class ArticleController {
     }
 
     @Get(':id')
+    @SerializeOptions({ groups: ['article-detail'] })
     findOne(@Param('id') id: string) {
-        return this.articleService.findOne(+id);
+        return this.articleService.findOne(id);
     }
 
     @Patch(':id')
