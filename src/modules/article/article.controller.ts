@@ -10,6 +10,8 @@ import {
     SerializeOptions,
 } from '@nestjs/common';
 
+import { BusinessException } from '@/common/filters/exceptions/business.exception';
+
 import { ArticleService } from './article.service';
 import { CreateArticleDto } from './dto/create-article.dto';
 import { UpdateArticleDto } from './dto/update-article.dto';
@@ -26,6 +28,8 @@ export class ArticleController {
 
     @Get()
     findAll() {
+        // throw new HttpException('hello', 200);
+        throw new BusinessException('hello');
         return this.articleService.findAll();
     }
 

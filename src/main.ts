@@ -3,6 +3,7 @@ import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 
 import { AppModule } from '@/app.module';
+import { HttpExceptionFilter, BaseExceptionFilter } from '@/common/filters';
 import Logger from '@/common/utils/Logger';
 
 import { LoggerMiddleware } from './common/middleware';
@@ -15,6 +16,8 @@ async function bootstrap() {
 
     // DTO入参校验
     app.useGlobalPipes(new ValidationPipe());
+    // 过滤器-异常处理
+    app.useGlobalFilters(new BaseExceptionFilter(), new HttpExceptionFilter());
 
     await app.listen(3000, '0.0.0.0');
     Logger.msg(`Application is running on: ${await app.getUrl()}`);
