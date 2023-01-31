@@ -1,5 +1,7 @@
 import { Exclude, Expose } from 'class-transformer';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
+
+import { Category } from '@/modules/category/entities/category.entity';
 
 @Exclude()
 @Entity()
@@ -26,4 +28,10 @@ export class Article {
         default: false,
     })
     published?: boolean;
+
+    @ManyToMany((type) => Category, (category: Category) => category.articles, {
+        cascade: true, // 级联
+    })
+    @JoinTable() // many-to-many 关系的拥有者
+    categories!: Category[];
 }

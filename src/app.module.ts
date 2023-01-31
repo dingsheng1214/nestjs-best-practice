@@ -7,6 +7,7 @@ import { getConfig } from '@/common/utils/config';
 
 import { AppIntercepter } from './common/interceptors';
 import { ArticleModule } from './modules/article/article.module';
+import { CategoryModule } from './modules/category/category.module';
 import DatabaseModule from './modules/database/database.module';
 import { UserModule } from './modules/user/user.module';
 
@@ -20,6 +21,7 @@ import { UserModule } from './modules/user/user.module';
         DatabaseModule.forRoot(),
         UserModule,
         ArticleModule,
+        CategoryModule,
     ],
     providers: [
         {
