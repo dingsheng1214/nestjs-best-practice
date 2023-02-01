@@ -24,6 +24,7 @@ async function bootstrap() {
     await app.listen(3000, '0.0.0.0');
     Logger.msg(`Application is running on: ${await app.getUrl()}`);
     Logger.msg(`Swagger is running on: ${await app.getUrl()}/api`);
+    Logger.msg(`phpmyadmin is running on: http://localhost:8080`);
     Logger.msg(`Current NODE_ENV: ${process.env.NODE_ENV}`);
 }
 bootstrap();

@@ -15,13 +15,12 @@ services:
     volumes:
       - db:/var/lib/docker/volumes/mysql_data
 
-  # 网页版数据库管理工具(http://localhost:8080), 推荐使用 navicat
-  adminer:
-    image: adminer
+  # 网页版数据库管理工具phpmyadmin(http://localhost:8080), 推荐使用 navicat
+  phpmyadmin:
+    image: phpmyadmin
     restart: always
     ports:
-      - 8080:8080
-
+      - 8080:80
 volumes:
   db:
     driver: local
