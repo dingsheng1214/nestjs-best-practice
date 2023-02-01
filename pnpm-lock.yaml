@@ -13,8 +13,10 @@ specifiers:
   '@nestjs/typeorm': ^9.0.1
   '@types/express': ^4.17.15
   '@types/jest': 29.2.5
+  '@types/lodash': ^4.14.191
   '@types/node': ^18.11.18
   '@types/supertest': ^2.0.12
+  '@types/validator': ^13.7.11
   '@typescript-eslint/eslint-plugin': ^5.48.1
   '@typescript-eslint/parser': ^5.48.1
   chalk: 4.1.2
@@ -48,6 +50,7 @@ specifiers:
   tsconfig-paths: 4.1.2
   typeorm: ^0.3.11
   typescript: ^4.9.4
+  validator: ^13.7.0
   yaml: ^2.2.1
 
 dependencies:
@@ -58,6 +61,8 @@ dependencies:
   '@nestjs/platform-express': 9.2.1_hjcqpoaebdr7gdo5hgc22hthbe
   '@nestjs/platform-fastify': 9.2.1_hjcqpoaebdr7gdo5hgc22hthbe
   '@nestjs/typeorm': 9.0.1_hkapd3a3mi37wyf4vtt5y4i2ye
+  '@types/lodash': 4.14.191
+  '@types/validator': 13.7.11
   chalk: 4.1.2
   class-transformer: 0.5.1
   class-validator: 0.14.0
@@ -72,6 +77,7 @@ dependencies:
   rxjs: 7.8.0
   stacktrace-js: 2.0.2
   typeorm: 0.3.11_vi676j5qc66lrw5lu3uf7yadem
+  validator: 13.7.0
   yaml: 2.2.1
 
 devDependencies:
@@ -1306,6 +1312,10 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
 
+  /@types/lodash/4.14.191:
+    resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
+    dev: false
+
   /@types/mime/3.0.1:
     resolution: {integrity: sha512-Y4XFY5VJAuw0FgAqPNd6NNoV44jbq9Bz2L7Rh/J6jLTiHBSBJa9fxqQIvkIld4GsoDOcCbvzOUAbLPsSKKg+uA==}
     dev: true
@@ -1357,8 +1367,8 @@ packages:
       '@types/superagent': 4.1.16
     dev: true
 
-  /@types/validator/13.7.10:
-    resolution: {integrity: sha512-t1yxFAR2n0+VO6hd/FJ9F2uezAZVWHLmpmlJzm1eX03+H7+HsuTAp7L8QJs+2pQCfWkP1+EXsGK9Z9v7o/qPVQ==}
+  /@types/validator/13.7.11:
+    resolution: {integrity: sha512-WqTos+CnAKN64YwyBMhgUYhb5VsTNKwUY6AuzG5qu9/pFZJar/RJFMZBXwX7VS+uzYi+lIAr3WkvuWqEI9F2eg==}
 
   /@types/yargs-parser/21.0.0:
     resolution: {integrity: sha512-iO9ZQHkZxHn4mSakYV0vFHAVDyEOIJQrV2uZ06HxEPcx+mt8swXoZHIbaaJ2crJYFfErySgktuTZ3BeLz+XmFA==}
@@ -2083,7 +2093,7 @@ packages:
   /class-validator/0.14.0:
     resolution: {integrity: sha512-ct3ltplN8I9fOwUd8GrP8UQixwff129BkEtuWDKL5W45cQuLd19xqmTLu5ge78YDm/fdje6FMt0hGOhl0lii3A==}
     dependencies:
-      '@types/validator': 13.7.10
+      '@types/validator': 13.7.11
       libphonenumber-js: 1.10.18
       validator: 13.7.0
 

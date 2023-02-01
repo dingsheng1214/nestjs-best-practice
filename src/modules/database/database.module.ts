@@ -4,6 +4,9 @@ import { getDataSourceToken, TypeOrmModule, TypeOrmModuleOptions } from '@nestjs
 import { DataSource, ObjectType } from 'typeorm';
 
 import { CUSTOM_REPOSITORY_METADATA } from './constannt';
+import { DataExistConstraint } from './constraint/data.exist.constraint';
+import { UniqueConstraint } from './constraint/unique.constraint';
+import { UniqueTreeConstraint } from './constraint/unique.tree.constraint';
 
 @Module({})
 export default class DatabaseModule {
@@ -21,6 +24,7 @@ export default class DatabaseModule {
                     },
                 }),
             ],
+            providers: [DataExistConstraint, UniqueConstraint, UniqueTreeConstraint],
         };
     }
 

@@ -2,18 +2,21 @@ import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 
+import { useContainer } from 'class-validator';
+
 import { AppModule } from '@/app.module';
 import { HttpExceptionFilter, BaseExceptionFilter } from '@/common/filters';
+import { LoggerMiddleware } from '@/common/middleware';
 import Logger from '@/common/utils/Logger';
 
-import { LoggerMiddleware } from './common/middleware';
 
 async function bootstrap() {
     const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter());
-
+    useContainer(app.select(AppModule), {
+        fallbackOnErrors: true,
+    });
     // 中间件-log4js日志
     app.use(LoggerMiddleware);
-
     // DTO入参校验
     app.useGlobalPipes(new ValidationPipe());
     // 过滤器-异常处理

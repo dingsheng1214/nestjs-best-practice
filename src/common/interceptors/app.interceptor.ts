@@ -19,13 +19,13 @@ export class AppIntercepter extends ClassSerializerInterceptor {
         }
 
         // 如果是数组,则遍历对每一项进行序列化
-        if (isArray(response)) {
+        else if (isArray(response)) {
             data = (response as PlainLiteralObject[]).map((item) =>
                 !isObject(item) ? item : this.transformToPlain(item, options),
             );
         }
         // 如果是分页数据,则对items中的每一项进行序列化
-        if ('meta' in response && 'items' in response) {
+        else if ('meta' in response && 'items' in response) {
             const items = !isNil(response.items) && isArray(response.items) ? response.items : [];
             data = {
                 ...response,
