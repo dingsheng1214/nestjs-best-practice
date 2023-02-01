@@ -3,7 +3,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { getDataSourceToken, TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { DataSource, ObjectType } from 'typeorm';
 
-import { CUSTOM_REPOSITORY_METADATA } from './constannt';
+import { CUSTOM_REPOSITORY_METADATA } from './constant';
 import { DataExistConstraint } from './constraint/data.exist.constraint';
 import { UniqueConstraint } from './constraint/unique.constraint';
 import { UniqueTreeConstraint } from './constraint/unique.tree.constraint';

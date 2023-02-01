@@ -1,7 +1,7 @@
 import { SetMetadata } from '@nestjs/common';
 import { ObjectType } from 'typeorm';
 
-import { CUSTOM_REPOSITORY_METADATA } from '../constannt';
+import { CUSTOM_REPOSITORY_METADATA } from '../constant';
 
 /**
  * 自定义Repository

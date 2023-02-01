@@ -9,7 +9,6 @@ import { HttpExceptionFilter, BaseExceptionFilter } from '@/common/filters';
 import { LoggerMiddleware } from '@/common/middleware';
 import Logger from '@/common/utils/Logger';
 
-
 async function bootstrap() {
     const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter());
     useContainer(app.select(AppModule), {
