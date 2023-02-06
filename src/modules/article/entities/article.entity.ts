@@ -1,5 +1,5 @@
 import { Exclude, Expose } from 'class-transformer';
-import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, Index, JoinTable, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 import { Category } from '@/modules/category/entities/category.entity';
 
@@ -12,6 +12,7 @@ export class Article {
 
     @Expose()
     @Column()
+    @Index({ fulltext: true })
     title: string;
 
     @Expose()
@@ -21,6 +22,7 @@ export class Article {
     // body字段只在article-detail组中显示
     @Expose({ groups: ['article-detail'] })
     @Column()
+    @Index({ fulltext: true })
     body: string;
 
     @Expose()
@@ -33,5 +35,5 @@ export class Article {
         cascade: true, // 级联
     })
     @JoinTable() // many-to-many 关系的拥有者
-    categories!: Category[];
+    categories: Category[];
 }

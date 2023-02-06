@@ -9,6 +9,7 @@ import { AppIntercepter } from './common/interceptors';
 import { ArticleModule } from './modules/article/article.module';
 import { CategoryModule } from './modules/category/category.module';
 import DatabaseModule from './modules/database/database.module';
+import { ElasticModule } from './modules/elastic/elastic.module';
 import { UserModule } from './modules/user/user.module';
 
 @Module({
@@ -19,6 +20,7 @@ import { UserModule } from './modules/user/user.module';
             load: [getConfig], // 读取自定义文件
         }),
         DatabaseModule.forRoot(),
+        ElasticModule.forRoot(),
         UserModule,
         ArticleModule,
         CategoryModule,

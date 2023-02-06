@@ -5,6 +5,14 @@ db_config:
   username: "root"
   password: "root"
   database: "nest-practice"
-  logging: ['error']
+  logging: true # ['error']
   synchronize: true # 启动数据库时自动根据加载的模型(Entity)来同步数据表到数据库
   autoLoadEntities: true # 这样我们就不需要把每个模块的Entity逐个定死地添加到配置中的entities数组中了，因为你可以在每个模块中使用TypeOrmModule.forFeature来动态的加入Entity
+
+elastic_config:
+  node: 'http://localhost:9200'
+  username: "elastic"
+  password: "elastic"
+
+app_config:
+  searchType: "elastic" # 全文搜索: like, against, elastic

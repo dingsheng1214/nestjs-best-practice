@@ -25,6 +25,7 @@ async function bootstrap() {
     Logger.msg(`Application is running on: ${await app.getUrl()}`);
     Logger.msg(`Swagger is running on: ${await app.getUrl()}/api`);
     Logger.msg(`phpmyadmin is running on: http://localhost:8080`);
+    Logger.msg(`kibana is running on: http://localhost:5601/app/dev_tools#/console`);
     Logger.msg(`Current NODE_ENV: ${process.env.NODE_ENV}`);
 }
 bootstrap();

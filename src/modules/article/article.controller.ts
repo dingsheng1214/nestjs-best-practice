@@ -14,6 +14,7 @@ import { BusinessException } from '@/common/filters/exceptions/business.exceptio
 
 import { ArticleService } from './article.service';
 import { CreateArticleDto } from './dto/create-article.dto';
+import { QueryArticleDto } from './dto/query-article.dto';
 import { UpdateArticleDto } from './dto/update-article.dto';
 
 @UseInterceptors()
@@ -31,6 +32,11 @@ export class ArticleController {
         // throw new HttpException('hello', 200);
         throw new BusinessException('hello');
         return this.articleService.findAll();
+    }
+
+    @Post('query')
+    query(@Body() queryDto: QueryArticleDto) {
+        return this.articleService.query(queryDto);
     }
 
     @Get(':id')

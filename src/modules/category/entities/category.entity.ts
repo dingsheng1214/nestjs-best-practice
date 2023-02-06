@@ -2,6 +2,7 @@ import { Exclude, Expose } from 'class-transformer';
 import {
     Column,
     Entity,
+    Index,
     ManyToMany,
     PrimaryGeneratedColumn,
     Tree,
@@ -21,6 +22,7 @@ export class Category {
 
     @Expose()
     @Column({ comment: '分类名称' })
+    @Index({ fulltext: true })
     name: string;
 
     @Expose()
