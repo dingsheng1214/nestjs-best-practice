@@ -1,15 +1,12 @@
 import { Exclude, Expose } from 'class-transformer';
-import { Column, Entity, Index, JoinTable, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, Index, JoinTable, ManyToMany } from 'typeorm';
 
 import { Category } from '@/modules/category/entities/category.entity';
+import { BaseEntity } from '@/modules/database/base/entity';
 
 @Exclude()
 @Entity()
-export class Article {
-    @Expose()
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
-
+export class Article extends BaseEntity {
     @Expose()
     @Column()
     @Index({ fulltext: true })

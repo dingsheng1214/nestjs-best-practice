@@ -1,3 +1,5 @@
 import { BUSINESS_ERROR_CODE } from './business.errorcode';
 
-export { BUSINESS_ERROR_CODE };
+const CRUD_OPTIONS = 'crud_options';
+
+export { BUSINESS_ERROR_CODE, CRUD_OPTIONS };

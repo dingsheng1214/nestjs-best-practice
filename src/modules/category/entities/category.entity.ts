@@ -1,25 +1,13 @@
 import { Exclude, Expose } from 'class-transformer';
-import {
-    Column,
-    Entity,
-    Index,
-    ManyToMany,
-    PrimaryGeneratedColumn,
-    Tree,
-    TreeChildren,
-    TreeParent,
-} from 'typeorm';
+import { Column, Entity, Index, ManyToMany, Tree, TreeChildren, TreeParent } from 'typeorm';
 
 import { Article } from '@/modules/article/entities/article.entity';
+import { BaseEntity } from '@/modules/database/base/entity';
 
 @Exclude()
 @Tree('materialized-path') // 物理路径
 @Entity()
-export class Category {
-    @Expose()
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
-
+export class Category extends BaseEntity {
     @Expose()
     @Column({ comment: '分类名称' })
     @Index({ fulltext: true })

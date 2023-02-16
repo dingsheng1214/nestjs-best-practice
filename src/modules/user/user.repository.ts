@@ -1,12 +1,14 @@
-import { Repository } from 'typeorm';
-
 import { CustomRepository } from '@/modules/database/decorators/CustomRepository.decorator';
+
+import { BaseRepository } from '../database/base/repository';
 
 import { User } from './entities/user.entity';
 
 @CustomRepository(User)
-export class UserRepository extends Repository<User> {
+export class UserRepository extends BaseRepository<User> {
+    protected _qbName = 'user';
+
     findByName(name: string) {
-        return this.createQueryBuilder('user').where('user.name = :name', { name }).getOne();
+        return this.buildBaseQB().where('user.name = :name', { name }).getOne();
     }
 }

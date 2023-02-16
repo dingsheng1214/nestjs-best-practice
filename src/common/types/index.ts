@@ -1,4 +1,7 @@
 import { Article } from '@/modules/article/entities/article.entity';
+
+export * from './crud';
+
 /**
  * 全文搜索类型
  ** like: mysql like 实现全文搜索
