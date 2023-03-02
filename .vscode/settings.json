@@ -16,5 +16,15 @@
     "eslint.packageManager": "pnpm",
     // 默认使用pnpm作为包安装的管理工具
     "npm.packageManager": "pnpm",
-    "stylelint.packageManager": "pnpm"
+    "stylelint.packageManager": "pnpm",
+    "editor.codeLensFontFamily": "JetBrains Mono",
+    "editor.fontFamily": "JetBrains Mono",
+    "editor.inlayHints.fontFamily": "JetBrains Mono",
+    "scm.inputFontFamily": "JetBrains Mono",
+    "debug.console.fontFamily": "JetBrains Mono",
+    "notebook.outputFontFamily": "JetBrains Mono",
+    "terminal.integrated.fontFamily": "JetBrains Mono",
+    "errorLens.fontFamily": "JetBrains Mono",
+    "breadcrumbs.filePath": "on",
+    "breadcrumbs.symbolPath": "on"
 }

@@ -8,6 +8,9 @@ export class User extends BaseEntity {
     @Column()
     name: string;
 
+    @Column()
+    password: string;
+
     /**
      * deleteAt值为日期时,该值处于回收站中
      *  - Repository.softRemove 软删除 deleteAt值为日期

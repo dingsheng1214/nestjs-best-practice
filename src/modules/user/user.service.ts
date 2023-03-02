@@ -2,6 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { isNil } from 'lodash';
 import { In } from 'typeorm';
 
+import { CreateUserDto } from '@/modules/user/dto/create-user.dto';
+
 import { UserRepository } from './user.repository';
 
 @Injectable()
@@ -10,6 +12,10 @@ export class UserService {
 
     findByName(name: string) {
         return this.userRepository.findByName(name);
+    }
+
+    async create(createUserDto: CreateUserDto) {
+        return this.userRepository.save(createUserDto);
     }
 
     /**

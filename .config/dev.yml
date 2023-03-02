@@ -17,3 +17,5 @@ elastic_config:
 
 app_config:
   searchType: "elastic" # 全文搜索: like, against, elastic
+  jwtSecret: '123456'
+  jwtExpiresIn: '1 day'

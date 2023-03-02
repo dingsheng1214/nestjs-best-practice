@@ -26,5 +26,5 @@ export class LoginDto {
             message: '手机格式错误,示例: +86.15005255555',
         },
     )
-    phone: string;
+    phone?: string;
 }
